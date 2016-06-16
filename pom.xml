@@ -23,12 +23,12 @@
         <url>https://github.com/Jasig/CalendarPortlet</url>
       <tag>CalendarPortlet-2.2.1</tag>
   </scm>
-    
+
     <issueManagement>
         <url>${jasig-issues-base}/CAP</url>
         <system>${jasig-issues-system}</system>
     </issueManagement>
-    
+
     <repositories>
         <repository>
             <id>jasig-3rd-party</id>
@@ -40,10 +40,10 @@
         <repository>
             <id>caldav4j.repo</id>
             <name>CalDav4J Repository</name>
-            <url>http://caldav4j.googlecode.com/svn/maven/</url>
+            <url>http://www.esco-portail.org/nexus/content/groups/public</url>
         </repository>
     </repositories>
-    
+
     <properties>
         <!-- Dependency versions -->
         <cas.version>3.1.8</cas.version>
@@ -57,12 +57,12 @@
         <spring.version>3.1.3.RELEASE</spring.version>
         <uportal-maven-plugin.version>1.0.0</uportal-maven-plugin.version>
         <mockito.version>1.8.4</mockito.version>
-        
+
         <!-- The JDBC Driver used by the calendar portlet -->
         <jdbc.groupId>org.hsqldb</jdbc.groupId>
         <jdbc.artifactId>hsqldb</jdbc.artifactId>
         <jdbc.version>${hsqldb.version}</jdbc.version>
-        
+
     </properties>
 
     <dependencyManagement>
@@ -108,8 +108,8 @@
                 <artifactId>xstream</artifactId>
                 <version>1.3</version>
             </dependency>
-            <!-- Transitive of both commons-httpclient (as v1.2) and courses-portlet-dao 
-                 (as v1.6). You'd think Maven would favor the higher version number, but 
+            <!-- Transitive of both commons-httpclient (as v1.2) and courses-portlet-dao
+                 (as v1.6). You'd think Maven would favor the higher version number, but
                  that's not what it's doing, so adding codec 1.6 to this section. -->
             <dependency>
                 <groupId>commons-codec</groupId>
@@ -193,11 +193,11 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.8.2</version>
-            </dependency>           
+            </dependency>
             <dependency>
                 <groupId>net.sourceforge.nekohtml</groupId>
                 <artifactId>nekohtml</artifactId>
-                <version>1.9.14</version>            
+                <version>1.9.14</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
@@ -228,7 +228,7 @@
             <dependency>
                 <groupId>org.jasig.resourceserver</groupId>
                 <artifactId>resource-server-utils</artifactId>
-                <version>${resource-server.version}</version>            
+                <version>${resource-server.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>net.sf.ehcache</groupId>
@@ -615,8 +615,8 @@
             <artifactId>spring-jdbc</artifactId>
             <scope>runtime</scope>
         </dependency>
-        
-        
+
+
         <!-- ===== Provided Dependencies ================================== -->
         <dependency>
             <groupId>javax.portlet</groupId>
@@ -665,7 +665,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -847,7 +847,7 @@
                 <extensions>true</extensions>
             </plugin>
             <plugin>
-                <!-- 
+                <!--
                  | Invoke this plugin as follows to drop and recreate the Calendar database tables...
                  |
                  |   >mvn db-init
